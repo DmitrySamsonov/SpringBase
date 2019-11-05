@@ -5,7 +5,29 @@
     <title>Title</title>
 </head>
 <body>
-    <div>{{some}}</div>
     <p>Get your greeting <a href="/greeting">here</a></p>
+    <p>Руководство по mustache: <a href="http://mustache.github.io/mustache.5.html">here</a></p>
+    <p>Руководство по JPA репозиториям: <a href="https://docs.spring.io/spring-data/jpa/docs/1.5.0.RELEASE/reference/html/jpa.repositories.html#jpa.query-methods.query-creation">here</a></p>
+
+    <div>
+        <form method="post">
+            <input type="text" name = "text" placeholder="Enter message"/>
+            <input type="text" name = "tag" placeholder="tag"/>
+            <button type="submit">Add</button>
+        </form>
+    </div>
+
+    <div>Messages List</div>
+    <form method="post" action="filterAction">
+        <input type="text" name="filter" placeholder="Search by tag">
+        <button type="submit">Search</button>
+    </form>
+    {{#messages}}
+    <div>
+        <b>{{id}}</b>
+        <span>{{text}}</span>
+        <i>{{tag}}</i>
+    </div>
+    {{/messages}}
 </body>
 </html>

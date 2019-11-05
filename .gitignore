@@ -1,6 +1,7 @@
 # IntelijIDEA
 target
 .idea
+data
 uploads
 *.iml
 
