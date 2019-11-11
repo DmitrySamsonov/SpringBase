@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CRUD UI for Product</title>
+</head>
+<body>
+<div>
+    <p>Go to Main Page <a href="/">here</a></p>
+    <p>Руководство по mustache: <a href="http://mustache.github.io/mustache.5.html">here</a></p>
+</div>
+
+<div>
+    <p>H2 database console here:<a href="/h2-console">http://localhost:8080/h2-console/</a></p>
+</div>
+
+
+
+<div>
+    <h3>Product List</h3>
+    <div>
+        <form method="post" action="/ui/product/add">
+            <input type="text" name="name" placeholder="Enter name"/>
+            <input type="number" name="price" placeholder="Enter price $"/>
+            <button type="submit">Add</button>
+        </form>
+    </div>
+    <br/>
+    <div>
+        <form method="get" action="/ui/product/filterByName">
+            <input type="text" name="filter" placeholder="Search by name">
+            <button type="submit">Search</button>
+        </form>
+    </div>
+    <br/>
+    <div>
+        {{#productList}}
+            <div>
+                <p>
+                <b>{{id}}</b>
+                <span>{{name}}</span>
+                <i>{{price}}$</i>
+                <form method="get" action="/ui/product/edit">
+                    <input type="hidden" name="id" value="{{id}}"/>
+                    <button type="submit">Edit</button>
+                </form>
+                <form method="post" action="/ui/product/delete">
+                    <input type="hidden" name="id" value="{{id}}"/>
+                    <button type="submit">Delete</button>
+                </form>
+                </p>
+            </div>
+        {{/productList}}
+    </div>
+</div>
+</body>
+</html>

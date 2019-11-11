@@ -1,4 +1,4 @@
--- при старте приложения spring выполняет все скрипты из data.sql
+-- Spring boot execute sql-scripts from при старте приложения spring выполняет все скрипты из data.sql
 
 DROP TABLE IF EXISTS billionaires;
 

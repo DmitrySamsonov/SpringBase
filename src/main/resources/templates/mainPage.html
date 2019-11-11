@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>MAIN PAGE</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+<div>
+    <h3>MAIN PAGE</h3>
+</div>
+<div>
+    <p>some links:</p>
+    <p>H2 database console here:<a href="/h2-console">http://localhost:8080/h2-console/</a></p>
+    <p th:text="'JDBC URL: ' + ${jdbcUrl}" />
+    <p th:text="'User Name: ' + ${username}" />
+    <p th:text="'Password: ' + ${password}" />
+    <br/>
+    <br/>
+
+    <p>CRUD UI for Product here:<a href="/ui/product">http://localhost:8080/ui/product</a></p>
+
+</div>
+
+</body>
+</html>
